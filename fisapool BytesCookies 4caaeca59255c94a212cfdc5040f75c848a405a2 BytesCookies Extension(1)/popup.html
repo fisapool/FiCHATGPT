@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="img/logo-16.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FISABytes</title>
+    <link rel="stylesheet" href="assets/popup.html.3bd9b4f3.css">
+    <style>
+      .tips-section {
+        background-color: #f8f9fa;
+        padding: 16px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+
+      .tips-section h3 {
+        color: #2d3748;
+        margin: 0 0 12px 0;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .tips-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .tips-list li {
+        color: #4a5568;
+        padding: 6px 0;
+        font-size: 13px;
+        line-height: 1.5;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .tips-list li:before {
+        content: counter(step);
+        counter-increment: step;
+        background: #e2e8f0;
+        color: #4a5568;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+        font-size: 12px;
+        flex-shrink: 0;
+      }
+
+      .error-section {
+        margin-top: 16px;
+        padding: 12px;
+        background-color: #fff8f8;
+        border: 1px solid #ffebeb;
+        border-radius: 8px;
+        display: none;
+      }
+
+      /* Add GitHub settings styles */
+      .github-settings {
+        margin: 10px 0;
+        padding: 10px;
+        background: #f6f8fa;
+        border-radius: 6px;
+      }
+
+      .github-settings input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .github-settings button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        color: white;
+        font-weight: 500;
+      }
+
+      .github-settings button#saveToken {
+        background: #2ea44f;
+      }
+
+      .github-settings button#testConnection {
+        background: #0366d6;
+      }
+
+      #connectionStatus {
+        font-size: 12px;
+        margin-top: 8px;
+        padding: 4px;
+      }
+
+      .button-container {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      /* Add styles for token functionality */
+      .token-container {
+        margin: 10px 0;
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+      }
+      .token-input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .token-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      #saveTokenBtn {
+        background: #2ea44f;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #testTokenBtn {
+        background: #0366d6;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #statusMessage {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+      .success {
+        color: #2ea44f;
+      }
+      .error {
+        color: #d73a49;
+      }
+      .info {
+        color: #0366d6;
+      }
+
+      /* Add tab navigation styles */
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid #e1e4e8;
+        margin-bottom: 16px;
+      }
+      
+      .tab {
+        padding: 8px 16px;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        color: #586069;
+        font-size: 14px;
+      }
+      
+      .tab.active {
+        color: #0366d6;
+        border-bottom-color: #0366d6;
+        font-weight: 600;
+      }
+      
+      .tab-content {
+        display: none;
+      }
+      
+      .tab-content.active {
+        display: block;
+      }
+      
+      /* Sync tab styles */
+      .sync-section {
+        padding: 10px 0;
+      }
+      
+      .sync-domain {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 12px;
+        border: 1px solid #e1e4e8;
+        border-radius: 6px;
+        margin-bottom: 8px;
+      }
+      
+      .domain-info {
+        flex: 1;
+      }
+      
+      .domain-name {
+        font-weight: 600;
+        font-size: 14px;
+      }
+      
+      .sync-status {
+        font-size: 12px;
+        color: #586069;
+      }
+      
+      .sync-actions {
+        display: flex;
+        gap: 8px;
+      }
+      
+      .sync-button {
+        background: #0366d6;
+        color: white;
+        border: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      
+      .restore-button {
+        background: #6f42c1;
+        color: white;
+        border: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      
+      .sync-config {
+        margin-top: 16px;
+        padding: 12px;
+        background-color: #f6f8fa;
+        border-radius: 6px;
+      }
+      
+      .config-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      
+      .config-label {
+        flex: 1;
+        font-size: 14px;
+      }
+      
+      .add-domain-input {
+        padding: 6px 8px;
+        border: 1px solid #e1e4e8;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      
+      .add-domain-button {
+        background: #2ea44f;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 13px;
+        cursor: pointer;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="header">
+          <div class="title-container">
+            <h1>FISABytes</h1>
+            <p class="slogan">Version 2.0</p>
+          </div>
+        </div>
+        
+        <!-- Tab Navigation -->
+        <div class="tabs">
+          <div class="tab active" data-tab="cookies">Cookies</div>
+          <div class="tab" data-tab="sync">GitHub Sync</div>
+          <div class="tab" data-tab="settings">Settings</div>
+        </div>
+        
+        <div class="content">
+          <!-- Cookies Tab -->
+          <div class="tab-content active" id="cookies-tab">
+            <button id="exportBtn" class="action-button">
+              <span class="button-text">Export Cookies</span>
+            </button>
+            <button id="importBtn" class="action-button">
+              <span class="button-text">Import Cookies</span>
+            </button>
+            
+            <!-- Quick Start Tips -->
+            <div class="tips-section">
+              <h3>Quick Start:</h3>
+              <ul class="tips-list" style="counter-reset: step">
+                <li>Click "Export Cookies" and select your .json cookie file</li>
+                <li>Wait for import confirmation</li>
+              </ul>
+            </div>
+
+            <!-- Error Display -->
+            <div id="errorDisplay" class="error-section">
+              <div id="errorList" class="error-list"></div>
+            </div>
+          </div>
+          
+          <!-- GitHub Sync Tab -->
+          <div class="tab-content" id="sync-tab">
+            <div class="sync-section">
+              <h3>Domain Sync</h3>
+              <div id="syncDomainsList">
+                <!-- This will be populated dynamically -->
+              </div>
+              
+              <div class="sync-config">
+                <div class="config-row">
+                  <span class="config-label">Auto Sync</span>
+                  <input type="checkbox" id="autoSyncToggle">
+                </div>
+                <div class="config-row">
+                  <span class="config-label">Sync Interval (minutes)</span>
+                  <input type="number" id="syncIntervalInput" min="15" value="60" style="width: 60px">
+                </div>
+                <div class="config-row" style="margin-top: 16px;">
+                  <input type="text" id="addDomainInput" class="add-domain-input" placeholder="Add domain to sync (e.g., example.com)">
+                </div>
+                <div class="config-row">
+                  <button id="addDomainBtn" class="add-domain-button">Add Domain</button>
+                </div>
+              </div>
+              
+              <div id="syncStatus" class="info" style="margin-top: 12px; font-size: 12px;">
+                <!-- Sync status messages will appear here -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Settings Tab -->
+          <div class="tab-content" id="settings-tab">
+            <!-- Token functionality -->
+            <div class="token-container">
+              <h3>GitHub Integration</h3>
+              <input type="password" id="githubTokenInput" class="token-input" placeholder="Enter GitHub Token">
+              <div class="token-buttons">
+                <button id="saveTokenBtn">Save Token</button>
+                <button id="testTokenBtn">Test</button>
+              </div>
+              <div id="statusMessage"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer">
+          <a href="https://shopee.com.my/fisa_trading" target="_blank" rel="noopener noreferrer" class="fisa-link">
+            <img src="img/fisa-logo.svg" alt="FISA" class="fisa-logo">
+            <span>Visit our Shopee store</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="assets/chunk-44885162.js"></script>
+    <script src="assets/chunk-71c335f6.js"></script>
+    <script src="assets/error-handler.js"></script>
+    <script src="assets/site-logo.js"></script>
+    <script src="assets/tabs-handler.js"></script>
+    <script src="assets/sync-manager.js"></script>
+  </body>
+</html>

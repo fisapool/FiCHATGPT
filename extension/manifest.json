@@ -1,0 +1,7 @@
+{
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "update_url": "https://cookie-manager-updates.amelianatasha3.repl.co/public/updates.xml"
+} 

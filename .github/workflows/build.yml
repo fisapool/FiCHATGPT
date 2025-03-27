@@ -1,0 +1,110 @@
+name: Extension Build Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Lint code
+      run: npm run lint
+      
+    - name: Type check
+      run: npm run check
+      
+    - name: Build extension
+      run: npm run build
+      
+    - name: Run tests
+      run: npm test
+      
+    - name: Package extension
+      run: npm run package
+      
+    - name: Create ZIP file
+      run: npm run zip
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: extension-build
+        path: dist/
+        
+    - name: Upload release ZIP
+      uses: actions/upload-artifact@v3
+      with:
+        name: extension-zip
+        path: releases/*.zip
+
+  deploy:
+    needs: build
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+        
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+      with:
+        path: artifacts
+        
+    - name: Set version in package.json
+      run: |
+        VERSION=${GITHUB_REF#refs/tags/v}
+        npm version $VERSION --no-git-tag-version
+        
+    - name: Generate update manifest
+      run: |
+        npm install
+        export UPDATE_BASE_URL="${{ secrets.UPDATE_BASE_URL || 'https://cookie-manager-updates.amelianatasha3.repl.co' }}"
+        node scripts/generate-update-manifest.js
+    
+    # Deploy only to specific folders to not overwrite existing Replit configuration    
+    - name: Create releases directory for deployment
+      run: |
+        mkdir -p deploy/releases
+        cp -r artifacts/extension-zip/* deploy/releases/
+        mkdir -p deploy/public
+        cp -r public/* deploy/public/
+        
+    - name: Deploy extension ZIPs to Replit
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: deploy/releases
+        repository-name: ${{ secrets.REPLIT_REPO || 'amelianatasha3/cookie-manager-updates' }}
+        branch: main
+        token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        target-folder: releases
+        
+    - name: Deploy update manifest to Replit
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: deploy/public
+        repository-name: ${{ secrets.REPLIT_REPO || 'amelianatasha3/cookie-manager-updates' }}
+        branch: main
+        token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        target-folder: public 
