@@ -1,0 +1,851 @@
+[
+  {
+    "id": "PROD100000",
+    "name": "Software-cat.11000910.11000911.11000923 Product 1",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 72",
+    "dateAdded": "2024-12-25T09:43:48.265Z",
+    "price": 467.01,
+    "originalPrice": 502.87031630565957,
+    "discount": 7.13,
+    "rating": 3.9,
+    "ratingCount": 894,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%201",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%201",
+    "reviews": [
+      {
+        "id": "REV00",
+        "user": "User978",
+        "rating": 5,
+        "comment": "This is a great product. Would recommend.",
+        "date": "2025-03-27T00:23:03.417Z"
+      },
+      {
+        "id": "REV01",
+        "user": "User205",
+        "rating": 2,
+        "comment": "This is a average product. Shipping was fast.",
+        "date": "2025-03-26T22:30:18.735Z"
+      },
+      {
+        "id": "REV02",
+        "user": "User813",
+        "rating": 2,
+        "comment": "This is a great product. Would recommend.",
+        "date": "2025-03-27T00:35:05.972Z"
+      },
+      {
+        "id": "REV03",
+        "user": "User617",
+        "rating": 3,
+        "comment": "This is a great product. Shipping was fast.",
+        "date": "2025-03-26T22:46:30.221Z"
+      },
+      {
+        "id": "REV04",
+        "user": "User824",
+        "rating": 4,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-26T23:03:32.333Z"
+      }
+    ],
+    "sales": 335,
+    "stock": 58
+  },
+  {
+    "id": "PROD100001",
+    "name": "Software-cat.11000910.11000911.11000923 Product 2",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 23",
+    "dateAdded": "2025-01-24T14:36:07.526Z",
+    "price": 55.34,
+    "originalPrice": 82.72708440180922,
+    "discount": 33.11,
+    "rating": 3.1,
+    "ratingCount": 856,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%202",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%202",
+    "reviews": [
+      {
+        "id": "REV10",
+        "user": "User883",
+        "rating": 2,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-26T23:32:25.336Z"
+      },
+      {
+        "id": "REV11",
+        "user": "User789",
+        "rating": 2,
+        "comment": "This is a average product. Shipping was fast.",
+        "date": "2025-03-26T22:56:49.058Z"
+      },
+      {
+        "id": "REV12",
+        "user": "User269",
+        "rating": 5,
+        "comment": "This is a great product. Would recommend.",
+        "date": "2025-03-26T23:55:15.079Z"
+      },
+      {
+        "id": "REV13",
+        "user": "User729",
+        "rating": 1,
+        "comment": "This is a poor product. Shipping was fast.",
+        "date": "2025-03-27T00:54:05.471Z"
+      },
+      {
+        "id": "REV14",
+        "user": "User424",
+        "rating": 4,
+        "comment": "This is a average product. Would recommend.",
+        "date": "2025-03-26T22:41:27.189Z"
+      }
+    ],
+    "sales": 720,
+    "stock": 3
+  },
+  {
+    "id": "PROD100002",
+    "name": "Software-cat.11000910.11000911.11000923 Product 3",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 23",
+    "dateAdded": "2025-03-11T17:34:23.505Z",
+    "price": 326.16,
+    "originalPrice": 388.47765371262096,
+    "discount": 16.04,
+    "rating": 2.9,
+    "ratingCount": 875,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%203",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%203",
+    "reviews": [
+      {
+        "id": "REV20",
+        "user": "User118",
+        "rating": 3,
+        "comment": "This is a average product. Would recommend.",
+        "date": "2025-03-26T22:54:36.488Z"
+      },
+      {
+        "id": "REV21",
+        "user": "User206",
+        "rating": 4,
+        "comment": "This is a good product. Shipping was fast.",
+        "date": "2025-03-27T00:05:59.336Z"
+      },
+      {
+        "id": "REV22",
+        "user": "User681",
+        "rating": 4,
+        "comment": "This is a poor product. Would recommend.",
+        "date": "2025-03-26T22:50:00.261Z"
+      }
+    ],
+    "sales": 693,
+    "stock": 45
+  },
+  {
+    "id": "PROD100003",
+    "name": "Software-cat.11000910.11000911.11000923 Product 4",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 61",
+    "dateAdded": "2025-02-06T04:19:49.511Z",
+    "price": 554.71,
+    "originalPrice": 729.3013227655185,
+    "discount": 23.94,
+    "rating": 1.5,
+    "ratingCount": 879,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%204",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%204",
+    "reviews": [
+      {
+        "id": "REV30",
+        "user": "User870",
+        "rating": 1,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-27T00:56:32.905Z"
+      },
+      {
+        "id": "REV31",
+        "user": "User370",
+        "rating": 5,
+        "comment": "This is a good product. Shipping was fast.",
+        "date": "2025-03-26T23:51:38.740Z"
+      }
+    ],
+    "sales": 715,
+    "stock": 87
+  },
+  {
+    "id": "PROD100004",
+    "name": "Software-cat.11000910.11000911.11000923 Product 5",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 31",
+    "dateAdded": "2025-01-25T15:46:03.872Z",
+    "price": 102.1,
+    "originalPrice": 118.26529707220573,
+    "discount": 13.67,
+    "rating": 4.2,
+    "ratingCount": 943,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%205",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%205",
+    "reviews": [
+      {
+        "id": "REV40",
+        "user": "User713",
+        "rating": 2,
+        "comment": "This is a great product. Would recommend.",
+        "date": "2025-03-26T23:47:51.402Z"
+      }
+    ],
+    "sales": 877,
+    "stock": 61
+  },
+  {
+    "id": "PROD100005",
+    "name": "Software-cat.11000910.11000911.11000923 Product 6",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 43",
+    "dateAdded": "2025-03-05T05:38:49.234Z",
+    "price": 135.92,
+    "originalPrice": 200.9523467109082,
+    "discount": 32.36,
+    "rating": 3.1,
+    "ratingCount": 979,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%206",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%206",
+    "reviews": [
+      {
+        "id": "REV50",
+        "user": "User198",
+        "rating": 2,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-27T00:58:27.314Z"
+      },
+      {
+        "id": "REV51",
+        "user": "User293",
+        "rating": 2,
+        "comment": "This is a great product. Shipping was fast.",
+        "date": "2025-03-27T00:39:21.622Z"
+      }
+    ],
+    "sales": 527,
+    "stock": 89
+  },
+  {
+    "id": "PROD100006",
+    "name": "Software-cat.11000910.11000911.11000923 Product 7",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 83",
+    "dateAdded": "2025-03-09T20:13:18.987Z",
+    "price": 309.86,
+    "originalPrice": 314.43349512413107,
+    "discount": 1.45,
+    "rating": 3.5,
+    "ratingCount": 237,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%207",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%207",
+    "reviews": [
+      {
+        "id": "REV60",
+        "user": "User131",
+        "rating": 4,
+        "comment": "This is a great product. Would recommend.",
+        "date": "2025-03-27T00:33:46.425Z"
+      }
+    ],
+    "sales": 430,
+    "stock": 68
+  },
+  {
+    "id": "PROD100007",
+    "name": "Software-cat.11000910.11000911.11000923 Product 8",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 27",
+    "dateAdded": "2024-12-10T05:40:55.383Z",
+    "price": 770.97,
+    "originalPrice": 1140.5024868670573,
+    "discount": 32.4,
+    "rating": 3.3,
+    "ratingCount": 125,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%208",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%208",
+    "reviews": [
+      {
+        "id": "REV70",
+        "user": "User595",
+        "rating": 1,
+        "comment": "This is a average product. Would recommend.",
+        "date": "2025-03-27T00:41:10.041Z"
+      }
+    ],
+    "sales": 657,
+    "stock": 43
+  },
+  {
+    "id": "PROD100008",
+    "name": "Software-cat.11000910.11000911.11000923 Product 9",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 32",
+    "dateAdded": "2025-01-02T07:06:24.087Z",
+    "price": 535.78,
+    "originalPrice": 586.0348416195427,
+    "discount": 8.58,
+    "rating": 2.8,
+    "ratingCount": 767,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%209",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%209",
+    "reviews": [
+      {
+        "id": "REV80",
+        "user": "User853",
+        "rating": 5,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-27T00:55:09.122Z"
+      },
+      {
+        "id": "REV81",
+        "user": "User383",
+        "rating": 1,
+        "comment": "This is a poor product. Shipping was fast.",
+        "date": "2025-03-27T00:21:41.816Z"
+      }
+    ],
+    "sales": 651,
+    "stock": 17
+  },
+  {
+    "id": "PROD100009",
+    "name": "Software-cat.11000910.11000911.11000923 Product 10",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 99",
+    "dateAdded": "2025-02-20T23:31:18.820Z",
+    "price": 787.61,
+    "originalPrice": 1109.5292693163751,
+    "discount": 29.01,
+    "rating": 2.5,
+    "ratingCount": 87,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2010",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2010",
+    "reviews": [
+      {
+        "id": "REV90",
+        "user": "User373",
+        "rating": 5,
+        "comment": "This is a great product. Would recommend.",
+        "date": "2025-03-27T00:06:02.658Z"
+      }
+    ],
+    "sales": 8,
+    "stock": 65
+  },
+  {
+    "id": "PROD100010",
+    "name": "Software-cat.11000910.11000911.11000923 Product 11",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 34",
+    "dateAdded": "2025-01-10T15:20:25.877Z",
+    "price": 192.36,
+    "originalPrice": 195.9998931239894,
+    "discount": 1.86,
+    "rating": 1.6,
+    "ratingCount": 713,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2011",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2011",
+    "reviews": [
+      {
+        "id": "REV100",
+        "user": "User209",
+        "rating": 5,
+        "comment": "This is a great product. Would recommend.",
+        "date": "2025-03-26T23:29:14.103Z"
+      },
+      {
+        "id": "REV101",
+        "user": "User700",
+        "rating": 2,
+        "comment": "This is a good product. Shipping was fast.",
+        "date": "2025-03-27T00:27:55.122Z"
+      },
+      {
+        "id": "REV102",
+        "user": "User198",
+        "rating": 3,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-26T23:55:35.040Z"
+      }
+    ],
+    "sales": 378,
+    "stock": 10
+  },
+  {
+    "id": "PROD100011",
+    "name": "Software-cat.11000910.11000911.11000923 Product 12",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 79",
+    "dateAdded": "2025-02-15T15:46:49.183Z",
+    "price": 390.04,
+    "originalPrice": 546.4529509494854,
+    "discount": 28.62,
+    "rating": 4.5,
+    "ratingCount": 432,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2012",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2012",
+    "reviews": [
+      {
+        "id": "REV110",
+        "user": "User941",
+        "rating": 2,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-26T23:56:30.302Z"
+      },
+      {
+        "id": "REV111",
+        "user": "User553",
+        "rating": 1,
+        "comment": "This is a good product. Shipping was fast.",
+        "date": "2025-03-27T00:37:47.772Z"
+      }
+    ],
+    "sales": 163,
+    "stock": 55
+  },
+  {
+    "id": "PROD100012",
+    "name": "Software-cat.11000910.11000911.11000923 Product 13",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 77",
+    "dateAdded": "2024-12-10T09:45:26.432Z",
+    "price": 619.8,
+    "originalPrice": 769.7129744477774,
+    "discount": 19.48,
+    "rating": 1.3,
+    "ratingCount": 698,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2013",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2013",
+    "reviews": [
+      {
+        "id": "REV120",
+        "user": "User587",
+        "rating": 1,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-26T23:32:03.970Z"
+      },
+      {
+        "id": "REV121",
+        "user": "User762",
+        "rating": 2,
+        "comment": "This is a good product. Shipping was fast.",
+        "date": "2025-03-26T23:28:32.961Z"
+      }
+    ],
+    "sales": 938,
+    "stock": 39
+  },
+  {
+    "id": "PROD100013",
+    "name": "Software-cat.11000910.11000911.11000923 Product 14",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 75",
+    "dateAdded": "2024-12-10T17:06:30.403Z",
+    "price": 741.79,
+    "originalPrice": 908.8247834197153,
+    "discount": 18.38,
+    "rating": 3,
+    "ratingCount": 227,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2014",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2014",
+    "reviews": [
+      {
+        "id": "REV130",
+        "user": "User18",
+        "rating": 5,
+        "comment": "This is a poor product. Would recommend.",
+        "date": "2025-03-27T00:52:12.686Z"
+      },
+      {
+        "id": "REV131",
+        "user": "User226",
+        "rating": 5,
+        "comment": "This is a average product. Shipping was fast.",
+        "date": "2025-03-27T00:33:03.085Z"
+      },
+      {
+        "id": "REV132",
+        "user": "User510",
+        "rating": 3,
+        "comment": "This is a poor product. Would recommend.",
+        "date": "2025-03-27T01:00:57.962Z"
+      }
+    ],
+    "sales": 509,
+    "stock": 42
+  },
+  {
+    "id": "PROD100014",
+    "name": "Software-cat.11000910.11000911.11000923 Product 15",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 15",
+    "dateAdded": "2024-12-10T13:34:48.831Z",
+    "price": 476.25,
+    "originalPrice": 594.5084348832183,
+    "discount": 19.89,
+    "rating": 3,
+    "ratingCount": 418,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2015",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2015",
+    "reviews": [
+      {
+        "id": "REV140",
+        "user": "User9",
+        "rating": 4,
+        "comment": "This is a great product. Would recommend.",
+        "date": "2025-03-26T22:40:42.092Z"
+      },
+      {
+        "id": "REV141",
+        "user": "User31",
+        "rating": 3,
+        "comment": "This is a poor product. Shipping was fast.",
+        "date": "2025-03-26T23:17:51.663Z"
+      },
+      {
+        "id": "REV142",
+        "user": "User673",
+        "rating": 5,
+        "comment": "This is a average product. Would recommend.",
+        "date": "2025-03-27T00:14:15.570Z"
+      },
+      {
+        "id": "REV143",
+        "user": "User789",
+        "rating": 2,
+        "comment": "This is a average product. Shipping was fast.",
+        "date": "2025-03-26T22:42:40.474Z"
+      }
+    ],
+    "sales": 104,
+    "stock": 21
+  },
+  {
+    "id": "PROD100015",
+    "name": "Software-cat.11000910.11000911.11000923 Product 16",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 59",
+    "dateAdded": "2025-01-30T09:56:31.768Z",
+    "price": 869.93,
+    "originalPrice": 1230.80450493426,
+    "discount": 29.32,
+    "rating": 4.9,
+    "ratingCount": 715,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2016",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2016",
+    "reviews": [
+      {
+        "id": "REV150",
+        "user": "User774",
+        "rating": 3,
+        "comment": "This is a poor product. Would recommend.",
+        "date": "2025-03-26T23:40:13.663Z"
+      }
+    ],
+    "sales": 712,
+    "stock": 53
+  },
+  {
+    "id": "PROD100016",
+    "name": "Software-cat.11000910.11000911.11000923 Product 17",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 22",
+    "dateAdded": "2024-12-24T08:57:43.212Z",
+    "price": 252.19,
+    "originalPrice": 280.5152787491599,
+    "discount": 10.1,
+    "rating": 4.5,
+    "ratingCount": 708,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2017",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2017",
+    "reviews": [
+      {
+        "id": "REV160",
+        "user": "User856",
+        "rating": 1,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-27T00:10:33.737Z"
+      }
+    ],
+    "sales": 1,
+    "stock": 46
+  },
+  {
+    "id": "PROD100017",
+    "name": "Software-cat.11000910.11000911.11000923 Product 18",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 66",
+    "dateAdded": "2025-02-22T21:15:40.769Z",
+    "price": 145.43,
+    "originalPrice": 217.68124072601557,
+    "discount": 33.19,
+    "rating": 4.4,
+    "ratingCount": 453,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2018",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2018",
+    "reviews": [
+      {
+        "id": "REV170",
+        "user": "User704",
+        "rating": 4,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-27T00:08:00.946Z"
+      }
+    ],
+    "sales": 85,
+    "stock": 64
+  },
+  {
+    "id": "PROD100018",
+    "name": "Software-cat.11000910.11000911.11000923 Product 19",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 62",
+    "dateAdded": "2025-01-07T20:44:45.642Z",
+    "price": 319.27,
+    "originalPrice": 451.69106542198824,
+    "discount": 29.32,
+    "rating": 2.8,
+    "ratingCount": 366,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2019",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2019",
+    "reviews": [
+      {
+        "id": "REV180",
+        "user": "User154",
+        "rating": 1,
+        "comment": "This is a average product. Would recommend.",
+        "date": "2025-03-26T23:37:50.886Z"
+      },
+      {
+        "id": "REV181",
+        "user": "User784",
+        "rating": 1,
+        "comment": "This is a poor product. Shipping was fast.",
+        "date": "2025-03-27T00:04:12.500Z"
+      }
+    ],
+    "sales": 91,
+    "stock": 67
+  },
+  {
+    "id": "PROD100019",
+    "name": "Software-cat.11000910.11000911.11000923 Product 20",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 29",
+    "dateAdded": "2025-02-04T20:12:01.129Z",
+    "price": 722.84,
+    "originalPrice": 966.7072121089319,
+    "discount": 25.23,
+    "rating": 1.4,
+    "ratingCount": 527,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2020",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2020",
+    "reviews": [
+      {
+        "id": "REV190",
+        "user": "User719",
+        "rating": 1,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-27T00:24:08.189Z"
+      },
+      {
+        "id": "REV191",
+        "user": "User262",
+        "rating": 5,
+        "comment": "This is a poor product. Shipping was fast.",
+        "date": "2025-03-27T00:28:07.032Z"
+      },
+      {
+        "id": "REV192",
+        "user": "User173",
+        "rating": 3,
+        "comment": "This is a average product. Would recommend.",
+        "date": "2025-03-26T23:58:34.744Z"
+      },
+      {
+        "id": "REV193",
+        "user": "User118",
+        "rating": 4,
+        "comment": "This is a average product. Shipping was fast.",
+        "date": "2025-03-27T00:32:17.602Z"
+      }
+    ],
+    "sales": 953,
+    "stock": 54
+  },
+  {
+    "id": "PROD100020",
+    "name": "Software-cat.11000910.11000911.11000923 Product 21",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 91",
+    "dateAdded": "2025-02-28T07:55:04.195Z",
+    "price": 918.57,
+    "originalPrice": 1203.8965237844936,
+    "discount": 23.7,
+    "rating": 4.5,
+    "ratingCount": 748,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2021",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2021",
+    "reviews": [
+      {
+        "id": "REV200",
+        "user": "User998",
+        "rating": 3,
+        "comment": "This is a good product. Would recommend.",
+        "date": "2025-03-27T00:40:58.884Z"
+      },
+      {
+        "id": "REV201",
+        "user": "User708",
+        "rating": 5,
+        "comment": "This is a poor product. Shipping was fast.",
+        "date": "2025-03-26T23:10:10.260Z"
+      },
+      {
+        "id": "REV202",
+        "user": "User720",
+        "rating": 5,
+        "comment": "This is a poor product. Would recommend.",
+        "date": "2025-03-26T23:09:46.644Z"
+      },
+      {
+        "id": "REV203",
+        "user": "User927",
+        "rating": 5,
+        "comment": "This is a average product. Shipping was fast.",
+        "date": "2025-03-26T22:46:15.704Z"
+      }
+    ],
+    "sales": 95,
+    "stock": 42
+  },
+  {
+    "id": "PROD100021",
+    "name": "Software-cat.11000910.11000911.11000923 Product 22",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 6",
+    "dateAdded": "2024-12-07T20:29:25.144Z",
+    "price": 737.26,
+    "originalPrice": 980.1722305128178,
+    "discount": 24.78,
+    "rating": 2.4,
+    "ratingCount": 230,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2022",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2022",
+    "reviews": [
+      {
+        "id": "REV210",
+        "user": "User421",
+        "rating": 3,
+        "comment": "This is a average product. Would recommend.",
+        "date": "2025-03-27T00:07:09.574Z"
+      },
+      {
+        "id": "REV211",
+        "user": "User908",
+        "rating": 1,
+        "comment": "This is a poor product. Shipping was fast.",
+        "date": "2025-03-26T23:04:34.728Z"
+      }
+    ],
+    "sales": 553,
+    "stock": 40
+  },
+  {
+    "id": "PROD100022",
+    "name": "Software-cat.11000910.11000911.11000923 Product 23",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 10",
+    "dateAdded": "2025-02-23T07:20:08.939Z",
+    "price": 412.37,
+    "originalPrice": 580.6473357598067,
+    "discount": 28.98,
+    "rating": 2.7,
+    "ratingCount": 775,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2023",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2023",
+    "reviews": [
+      {
+        "id": "REV220",
+        "user": "User920",
+        "rating": 5,
+        "comment": "This is a poor product. Would recommend.",
+        "date": "2025-03-26T23:43:58.076Z"
+      },
+      {
+        "id": "REV221",
+        "user": "User490",
+        "rating": 4,
+        "comment": "This is a poor product. Shipping was fast.",
+        "date": "2025-03-27T00:24:23.761Z"
+      }
+    ],
+    "sales": 431,
+    "stock": 23
+  },
+  {
+    "id": "PROD100023",
+    "name": "Software-cat.11000910.11000911.11000923 Product 24",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 6",
+    "dateAdded": "2025-01-07T07:58:58.951Z",
+    "price": 936.24,
+    "originalPrice": 965.7075019532672,
+    "discount": 3.05,
+    "rating": 3.2,
+    "ratingCount": 300,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2024",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2024",
+    "reviews": [
+      {
+        "id": "REV230",
+        "user": "User621",
+        "rating": 3,
+        "comment": "This is a average product. Would recommend.",
+        "date": "2025-03-26T23:03:42.607Z"
+      },
+      {
+        "id": "REV231",
+        "user": "User767",
+        "rating": 4,
+        "comment": "This is a average product. Shipping was fast.",
+        "date": "2025-03-27T00:38:30.610Z"
+      }
+    ],
+    "sales": 168,
+    "stock": 7
+  },
+  {
+    "id": "PROD100024",
+    "name": "Software-cat.11000910.11000911.11000923 Product 25",
+    "category": "Software-cat.11000910.11000911.11000923",
+    "seller": "Seller 45",
+    "dateAdded": "2024-12-23T06:24:47.829Z",
+    "price": 873.23,
+    "originalPrice": 972.5799856614273,
+    "discount": 10.22,
+    "rating": 1.4,
+    "ratingCount": 868,
+    "imageUrl": "/placeholder.svg?height=200&width=200&text=Software-cat.11000910.11000911.11000923%20Product%2025",
+    "thumbnailUrl": "/placeholder.svg?height=50&width=50&text=Software-cat.11000910.11000911.11000923%20Product%2025",
+    "reviews": [
+      {
+        "id": "REV240",
+        "user": "User315",
+        "rating": 2,
+        "comment": "This is a great product. Would recommend.",
+        "date": "2025-03-27T00:14:41.101Z"
+      }
+    ],
+    "sales": 514,
+    "stock": 32
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "contents href": {
+      "type": "string",
+      "count": 206,
+      "missing": 0,
+      "unique": 206
+    },
+    "inset-y-0 src": {
+      "type": "string",
+      "count": 206,
+      "missing": 0,
+      "unique": 206
+    },
+    "w-full src": {
+      "type": "string",
+      "count": 198,
+      "missing": 8,
+      "unique": 5
+    },
+    "absolute": {
+      "type": "string",
+      "count": 58,
+      "missing": 148,
+      "unique": 33
+    },
+    "line-clamp-2": {
+      "type": "string",
+      "count": 206,
+      "missing": 0,
+      "unique": 203
+    },
+    "truncate": {
+      "type": "string",
+      "count": 206,
+      "missing": 0,
+      "unique": 6
+    },
+    "truncate 2": {
+      "type": "string",
+      "count": 94,
+      "missing": 112,
+      "unique": 13
+    },
+    "truncate 3": {
+      "type": "number",
+      "count": 206,
+      "missing": 0,
+      "unique": 104,
+      "min": 0.2,
+      "max": 400,
+      "sum": 3015.55,
+      "mean": 14.63859223300971,
+      "median": 5.75,
+      "stdDev": 43.30252327295258
+    },
+    "truncate 4": {
+      "type": "string",
+      "count": 199,
+      "missing": 7,
+      "unique": 150
+    }
+  },
+  "correlations": [],
+  "trends": [],
+  "outliers": [
+    {
+      "field": "truncate 3",
+      "value": 400,
+      "zScore": 8.899282966443042,
+      "rowIndex": 168
+    },
+    {
+      "field": "truncate 3",
+      "value": 339,
+      "zScore": 7.490589075431348,
+      "rowIndex": 192
+    },
+    {
+      "field": "truncate 3",
+      "value": 279,
+      "zScore": 6.104988526895256,
+      "rowIndex": 138
+    }
+  ],
+  "insights": [
+    "This dataset contains 206 records with 9 fields.",
+    "Fields with missing data: w-full src (8 missing), absolute (148 missing), truncate 2 (112 missing), truncate 4 (7 missing).",
+    "Found 3 outliers in the dataset, with the most significant in the truncate 3 field."
+  ]
+}

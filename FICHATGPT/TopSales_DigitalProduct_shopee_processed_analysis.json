@@ -1,0 +1,151 @@
+{
+  "summary": {
+    "contents href": {
+      "type": "string",
+      "count": 195,
+      "missing": 0,
+      "unique": 195
+    },
+    "inset-y-0 src": {
+      "type": "string",
+      "count": 195,
+      "missing": 0,
+      "unique": 195
+    },
+    "w-full src": {
+      "type": "string",
+      "count": 185,
+      "missing": 10,
+      "unique": 5
+    },
+    "line-clamp-2": {
+      "type": "string",
+      "count": 195,
+      "missing": 0,
+      "unique": 189
+    },
+    "truncate": {
+      "type": "number",
+      "count": 195,
+      "missing": 0,
+      "unique": 95,
+      "min": 0.1,
+      "max": 819,
+      "sum": 3245.4899999999993,
+      "mean": 16.64353846153846,
+      "median": 5,
+      "stdDev": 69.47507711249396
+    },
+    "truncate 2": {
+      "type": "string",
+      "count": 195,
+      "missing": 0,
+      "unique": 10
+    },
+    "truncate 3": {
+      "type": "string",
+      "count": 155,
+      "missing": 40,
+      "unique": 17
+    },
+    "flex-none": {
+      "type": "number",
+      "count": 195,
+      "missing": 0,
+      "unique": 6,
+      "min": 4.1,
+      "max": 5,
+      "sum": 966.0999999999996,
+      "mean": 4.954358974358972,
+      "median": 5,
+      "stdDev": 0.10386862688141246
+    },
+    "truncate 4": {
+      "type": "string",
+      "count": 194,
+      "missing": 1,
+      "unique": 154
+    },
+    "inline src": {
+      "type": "string",
+      "count": 192,
+      "missing": 3,
+      "unique": 1
+    },
+    "ml-[3px]": {
+      "type": "string",
+      "count": 192,
+      "missing": 3,
+      "unique": 15
+    },
+    "875rem] href": {
+      "type": "string",
+      "count": 195,
+      "missing": 0,
+      "unique": 195
+    },
+    "h-4": {
+      "type": "string",
+      "count": 49,
+      "missing": 146,
+      "unique": 29
+    }
+  },
+  "correlations": [],
+  "trends": [],
+  "outliers": [
+    {
+      "field": "truncate",
+      "value": 819,
+      "zScore": 11.548838733050802,
+      "rowIndex": 186
+    },
+    {
+      "field": "flex-none",
+      "value": 4.1,
+      "zScore": 8.22538046386615,
+      "rowIndex": 17
+    },
+    {
+      "field": "truncate",
+      "value": 379,
+      "zScore": 5.215632376366195,
+      "rowIndex": 128
+    },
+    {
+      "field": "truncate",
+      "value": 339,
+      "zScore": 4.639886343940321,
+      "rowIndex": 143
+    },
+    {
+      "field": "flex-none",
+      "value": 4.6,
+      "zScore": 3.4116073832722047,
+      "rowIndex": 104
+    },
+    {
+      "field": "flex-none",
+      "value": 4.6,
+      "zScore": 3.4116073832722047,
+      "rowIndex": 118
+    },
+    {
+      "field": "flex-none",
+      "value": 4.6,
+      "zScore": 3.4116073832722047,
+      "rowIndex": 158
+    },
+    {
+      "field": "flex-none",
+      "value": 4.6,
+      "zScore": 3.4116073832722047,
+      "rowIndex": 180
+    }
+  ],
+  "insights": [
+    "This dataset contains 195 records with 13 fields.",
+    "Fields with missing data: w-full src (10 missing), truncate 3 (40 missing), truncate 4 (1 missing), inline src (3 missing), ml-[3px] (3 missing), h-4 (146 missing).",
+    "Found 8 outliers in the dataset, with the most significant in the truncate field."
+  ]
+}
