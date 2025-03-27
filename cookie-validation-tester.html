@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Validation Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 15px;
+            font-family: monospace;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        h2 {
+            margin-top: 25px;
+        }
+        .wrapper {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cookie Validation Tester</h1>
+    <p>This tool helps identify issues with cookie validation in the Cookie Manager application.</p>
+    
+    <div class="wrapper">
+        <h2>Test Cookie JSON</h2>
+        <p>Paste your cookie JSON data below to validate if it meets the expected format:</p>
+        <textarea id="cookieInput" placeholder='Paste cookie JSON here, e.g., [{"domain": "github.com", "name": "cookie_name", "value": "cookie_value", "path": "/", "secure": true}]'></textarea>
+        <button id="validateBtn">Validate Cookies</button>
+        <div id="result"></div>
+    </div>
+    
+    <div class="wrapper">
+        <h2>Sample GitHub Cookie Format</h2>
+        <p>Your cookies should match this structure:</p>
+        <pre>[
+  {
+    "domain": "github.com",
+    "expirationDate": 1678900000,
+    "hostOnly": false,
+    "httpOnly": true,
+    "name": "user_session",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "value": "abc123..."
+  },
+  {
+    "domain": ".github.com",
+    "expirationDate": 1678900000,
+    "hostOnly": false,
+    "httpOnly": false,
+    "name": "logged_in",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "value": "yes"
+  }
+]</pre>
+    </div>
+
+    <script>
+        document.getElementById('validateBtn').addEventListener('click', () => {
+            const resultDiv = document.getElementById('result');
+            const cookieText = document.getElementById('cookieInput').value.trim();
+            
+            if (!cookieText) {
+                resultDiv.className = 'error';
+                resultDiv.textContent = 'Please enter cookie data to validate';
+                return;
+            }
+            
+            try {
+                // Parse JSON
+                const cookies = JSON.parse(cookieText);
+                
+                // Check if it's an array
+                if (!Array.isArray(cookies)) {
+                    throw new Error('Cookie data must be an array of cookie objects');
+                }
+                
+                // Validate each cookie
+                const validationResults = cookies.map((cookie, index) => {
+                    const issues = [];
+                    
+                    // Required fields
+                    if (!cookie.domain) issues.push('Missing domain');
+                    if (!cookie.name) issues.push('Missing name');
+                    if (cookie.value === undefined) issues.push('Missing value');
+                    if (!cookie.path) issues.push('Missing path');
+                    
+                    // GitHub-specific validation
+                    if (cookie.domain.includes('github.com')) {
+                        if (!cookie.secure) issues.push('GitHub cookies should be secure');
+                    }
+                    
+                    return {
+                        index,
+                        cookie,
+                        issues,
+                        valid: issues.length === 0
+                    };
+                });
+                
+                // Check overall validity
+                const validCount = validationResults.filter(result => result.valid).length;
+                const invalidCount = validationResults.length - validCount;
+                
+                // Display results
+                resultDiv.className = invalidCount === 0 ? 'success' : 'error';
+                
+                let resultText = `Validation Results:
+Total Cookies: ${cookies.length}
+Valid Cookies: ${validCount}
+Invalid Cookies: ${invalidCount}
+
+`;
+                
+                if (invalidCount > 0) {
+                    resultText += 'Issues Found:\n\n';
+                    validationResults.forEach(result => {
+                        if (result.issues.length > 0) {
+                            resultText += `Cookie #${result.index + 1} (${result.cookie.name}):
+  - ${result.issues.join('\n  - ')}
+  
+`;
+                        }
+                    });
+                } else {
+                    resultText += 'All cookies are valid and should work correctly with GitHub.';
+                }
+                
+                resultDiv.textContent = resultText;
+                
+            } catch (error) {
+                resultDiv.className = 'error';
+                resultDiv.textContent = `Validation Error: ${error.message}
+
+Make sure you've provided valid JSON data.`;
+            }
+        });
+    </script>
+</body>
+</html> 
