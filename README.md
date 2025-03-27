@@ -75,6 +75,23 @@ A full-stack web application that combines advanced cookie management with ChatG
 └── package.json           # Project dependencies
 ```
 
+## External Resources
+
+### Secret Storage
+
+The project uses a separate repository for storing sensitive configuration and secrets:
+
+- **Repository**: [https://github.com/fisapool/json](https://github.com/fisapool/json)
+- **Purpose**: Securely store configuration values, API keys, and other sensitive data
+- **Integration**: The main application fetches configuration from this repository as needed
+- **Security**: Keeps sensitive data separate from the main codebase for enhanced security
+
+### Authentication Flow
+
+1. The extension authenticates with FISABytes using credentials stored in the secure repository
+2. Authentication tokens are securely stored in cookies using AES encryption
+3. The extension manages these tokens to provide seamless access to ChatGPT TEAM accounts
+
 ## Features
 
 🔄 **Cookie Management**
@@ -95,6 +112,8 @@ A full-stack web application that combines advanced cookie management with ChatG
 - Error boundaries
 - Type-safe operations
 - AES encryption implementation
+- External secrets repository for sensitive data
+- Separation of code and configuration
 
 🔑 **FISABytes Integration** (In Progress)
 - Secure token handling for ChatGPT access
@@ -127,17 +146,47 @@ The project includes several tools to help verify GitHub cookie loading:
 
 ## Development Setup
 
-Install dependencies:
+### Prerequisites
+- Node.js 20.x or higher
+- NPM or Yarn package manager
+- Access to the [fisapool/json](https://github.com/fisapool/json) repository for secrets
+
+### Installation
+1. Clone the main repository:
+```bash
+git clone https://github.com/fisapool/FiCHATGPT.git
+cd FiCHATGPT
+```
+
+2. Set up access to the secrets repository (contact repository admin for access):
+```bash
+# In a separate directory
+git clone https://github.com/fisapool/json.git
+```
+
+3. Install dependencies:
 ```bash
 npm install
 ```
 
-Start the development server:
+4. Configure the application to use the secrets:
+```bash
+# Create a .env file with the path to your secrets repository
+echo "SECRETS_PATH=/path/to/fisapool/json" > .env
+```
+
+5. Start the development server:
 ```bash
 npm run dev
 ```
 
 The application will be available at http://0.0.0.0:5000
+
+### Working with Secrets
+- Never commit secrets directly to the main repository
+- Always use the dedicated secrets repository for sensitive data
+- When deploying, ensure the CI/CD pipeline has secure access to the secrets repo
+- Rotate secrets regularly according to security best practices
 
 ## Available Scripts
 
