@@ -1,0 +1,70 @@
+name: Build Extension
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'extension/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'extension/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: 'extension/package.json'
+    
+    - name: Install Dependencies
+      run: |
+        cd extension
+        npm ci
+    
+    - name: Build Extension
+      run: |
+        cd extension
+        npm run build
+    
+    - name: Create ZIP archive
+      run: |
+        cd extension/dist
+        zip -r ../../fichatgpt-cookie-manager.zip .
+    
+    - name: Upload Extension Build
+      uses: actions/upload-artifact@v3
+      with:
+        name: cookie-manager-extension
+        path: fichatgpt-cookie-manager.zip
+        
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    
+    steps:
+    - name: Download build artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: cookie-manager-extension
+    
+    - name: Deploy to Replit
+      run: |
+        # Example deployment script to Replit
+        # This would be customized based on your Replit setup
+        echo "Deploying to Replit would go here"
+        # Using curl or other methods to upload to your deployment endpoint
+        # curl -X POST https://your-repl.replit.dev/deploy -F "file=@fichatgpt-cookie-manager.zip" -H "Authorization: Bearer ${{ secrets.REPLIT_AUTH_TOKEN }}" 

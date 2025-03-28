@@ -1,0 +1,126 @@
+name: Firefox Build and Test
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'extension/**'
+      - '.github/workflows/firefox-build.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'extension/**'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to build'
+        required: false
+        default: ''
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: './extension/package-lock.json'
+    
+    - name: Install dependencies
+      run: |
+        cd extension
+        npm ci
+    
+    - name: Install web-ext
+      run: npm install -g web-ext
+    
+    - name: Build extension for Firefox
+      run: |
+        cd extension
+        npm run build:firefox
+    
+    - name: Lint Firefox extension
+      run: |
+        cd extension
+        web-ext lint --source-dir ./dist-firefox
+    
+    - name: Run tests
+      run: |
+        cd extension
+        npm test
+    
+    - name: Package Firefox extension
+      run: |
+        cd extension
+        npm run package:firefox
+    
+    - name: Upload Firefox extension package
+      uses: actions/upload-artifact@v3
+      with:
+        name: firefox-extension
+        path: ./extension/fichatgpt-firefox.xpi
+        retention-days: 7
+    
+    - name: Setup Firefox
+      uses: browser-actions/setup-firefox@latest
+      with:
+        firefox-version: latest
+    
+    - name: Test extension with Firefox headless
+      run: |
+        cd extension
+        web-ext run --source-dir ./dist-firefox \
+          --firefox-binary $(which firefox) \
+          --headless \
+          --start-url "about:debugging#/runtime/this-firefox" \
+          --verbose \
+          -- --headless
+  
+  deploy:
+    needs: build-and-test
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Download Firefox extension package
+      uses: actions/download-artifact@v3
+      with:
+        name: firefox-extension
+        path: ./extension
+    
+    - name: Set version
+      id: set_version
+      run: |
+        VERSION="${{ github.event.inputs.version }}"
+        if [ -z "$VERSION" ]; then
+          VERSION=$(cat ./extension/package.json | jq -r '.version')
+        fi
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+    
+    - name: Update release info
+      run: |
+        sed -i 's/VERSION/${{ env.VERSION }}/g' ./server/public/updates.xml
+    
+    - name: Deploy to update server
+      run: |
+        # Copy the XPI file to the releases directory
+        mkdir -p ./server/releases
+        cp ./extension/fichatgpt-firefox.xpi ./server/releases/fichatgpt-firefox-${{ env.VERSION }}.xpi
+        
+        # In a real workflow, you would deploy to your actual server
+        # For this example, we're just creating the files locally
+        echo "Files would be deployed to update server"
+        
+    - name: Upload update file for reference
+      uses: actions/upload-artifact@v3
+      with:
+        name: firefox-update-manifest
+        path: ./server/public/updates.xml
+        retention-days: 7 

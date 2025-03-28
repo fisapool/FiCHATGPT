@@ -1,6 +1,21 @@
-// Initialize extension when installed
-chrome.runtime.onInstalled.addListener(() => {
-  console.log('Extension installed');
+// This is a basic example of a background script
+// It will run when the extension is installed or updated
+
+// Log that the background script is running
+console.log('Background script is running');
+
+// Add a listener for the onInstalled event
+chrome.runtime.onInstalled.addListener(function() {
+  // Log that the extension has been installed
+  console.log('Extension has been installed');
+});
+
+// Add a listener for the onMessage event
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+  // Log the message
+  console.log('Received message:', message);
+  // Send a response
+  sendResponse('Message received');
 });
 
 // Handle cookie operations
