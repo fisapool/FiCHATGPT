@@ -7,6 +7,7 @@ import { Cookie } from './types';
 import { AuthenticationService, LoginCredentials } from './security/AuthenticationService';
 import { DeviceFingerprint } from './security/DeviceFingerprint';
 import { LicenseManager } from './security/LicenseManager';
+import * as browserAPI from './utils/browser-api';
 
 // Create singleton instances of services
 const cookieManager = new CookieManager();
@@ -36,35 +37,23 @@ async function initializeExtension() {
   }
 }
 
-// Convert Chrome cookie to our Cookie format
-function convertChromeCookie(chromeCookie: chrome.cookies.Cookie): Cookie {
-  return {
-    domain: chromeCookie.domain,
-    expirationDate: chromeCookie.expirationDate,
-    hostOnly: chromeCookie.hostOnly,
-    httpOnly: chromeCookie.httpOnly,
-    name: chromeCookie.name,
-    path: chromeCookie.path,
-    sameSite: chromeCookie.sameSite as 'no_restriction' | 'lax' | 'strict',
-    secure: chromeCookie.secure,
-    session: !chromeCookie.expirationDate,
-    storeId: chromeCookie.storeId,
-    value: chromeCookie.value
-  };
+// Convert browser cookie to our Cookie format
+function convertBrowserCookie(browserCookie: chrome.cookies.Cookie): Cookie {
+  return browserAPI.convertBrowserCookie(browserCookie);
 }
 
 // Initialize extension when installed
-chrome.runtime.onInstalled.addListener(() => {
+browserAPI.runtime.onInstalled.addListener(() => {
   console.log('FiChatGPT Cookie Manager installed');
   initializeExtension();
 });
 
 // Handle cookie operations
-chrome.cookies.onChanged.addListener(async (changeInfo) => {
+browserAPI.cookies.onChanged.addListener(async (changeInfo) => {
   const { cookie, removed, cause } = changeInfo;
   
-  // Convert Chrome cookie to our format
-  const convertedCookie = convertChromeCookie(cookie);
+  // Convert browser cookie to our format
+  const convertedCookie = convertBrowserCookie(cookie);
   
   if (removed) {
     // Delete cookie from our storage
@@ -80,7 +69,7 @@ chrome.cookies.onChanged.addListener(async (changeInfo) => {
 });
 
 // Intercept requests to ChatGPT to enhance session stability
-chrome.webRequest.onBeforeSendHeaders.addListener(
+browserAPI.webRequest.onBeforeSendHeaders.addListener(
   (details) => {
     // Only process if license is active
     if (!licenseManager.isLicenseActive()) {
@@ -115,11 +104,11 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     return { cancel: false };
   },
   { urls: ["*://chat.openai.com/*"] },
-  ["blocking", "requestHeaders"]
+  browserAPI.getWebRequestModificationOptions()
 );
 
 // Handle messages from popup
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+browserAPI.runtime.onMessage.addListener((request, sender, sendResponse) => {
   const handleRequest = async () => {
     try {
       if (request.type === 'GET_ALL_COOKIES') {

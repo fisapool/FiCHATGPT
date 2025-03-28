@@ -1,0 +1,124 @@
+name: Refresh Session Cookies
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'  # Run every 12 hours
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  refresh-cookies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Refresh session cookies
+        id: refresh
+        run: |
+          # Check for cookies directory
+          mkdir -p cookies/chat_openai_com
+          
+          COOKIE_FILE="cookies/chat_openai_com/cookies.json"
+          if [ -f "$COOKIE_FILE" ]; then
+            echo "Found cookie file, updating session timestamps..."
+            
+            # Get current time in seconds since epoch
+            CURRENT_TIME=$(date +%s)
+            
+            # Use node to update the timestamp while preserving the structure
+            cat > update-session.js << 'EOF'
+            const fs = require('fs');
+            
+            // Read the cookie file
+            try {
+              const cookieFile = process.argv[2];
+              const currentTime = parseInt(process.argv[3]);
+              
+              if (!cookieFile || !currentTime) {
+                console.error('Missing required arguments');
+                process.exit(1);
+              }
+              
+              // Read file
+              const cookieData = JSON.parse(fs.readFileSync(cookieFile, 'utf8'));
+              
+              if (!cookieData.cookies || !Array.isArray(cookieData.cookies)) {
+                console.error('Invalid cookie format');
+                process.exit(1);
+              }
+              
+              // Future timestamp (7 days from now)
+              const futureTimestamp = currentTime + (7 * 24 * 60 * 60); 
+              
+              // Update cookies
+              let updatedCount = 0;
+              for (const cookie of cookieData.cookies) {
+                // Update session cookies or extend expiration dates
+                if (cookie.session === true) {
+                  // For session cookies, ensure they stay marked as session
+                  cookie.session = true;
+                  updatedCount++;
+                } else if (cookie.expirationDate) {
+                  // For cookies with expiration, extend if needed
+                  if (cookie.expirationDate < currentTime + (2 * 24 * 60 * 60)) {
+                    cookie.expirationDate = futureTimestamp;
+                    updatedCount++;
+                  }
+                }
+                
+                // Add special handling for specific cookies
+                if (cookie.name && (
+                  cookie.name.includes('csrf-token') || 
+                  cookie.name.includes('session-token') ||
+                  cookie.name.includes('next-auth')
+                )) {
+                  // These are critical authentication cookies, ensure they're refreshed
+                  if (cookie.expirationDate) {
+                    cookie.expirationDate = futureTimestamp;
+                    updatedCount++;
+                  }
+                }
+              }
+              
+              // Save updated cookies
+              fs.writeFileSync(cookieFile, JSON.stringify(cookieData, null, 2));
+              console.log(`Updated ${updatedCount} cookies`);
+              
+            } catch (error) {
+              console.error('Error updating cookies:', error);
+              process.exit(1);
+            }
+            EOF
+            
+            # Run the script to update cookies
+            node update-session.js "$COOKIE_FILE" "$CURRENT_TIME"
+            echo "cookies_updated=true" >> $GITHUB_OUTPUT
+          else
+            echo "No cookie file found at $COOKIE_FILE"
+            echo "cookies_updated=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.refresh.outputs.cookies_updated == 'true'
+        run: |
+          git config --global user.name "Cookie Refresh Bot"
+          git config --global user.email "bot@example.com"
+          
+          git add cookies/chat_openai_com/cookies.json
+          
+          # Only commit if there are changes
+          git diff --staged --quiet || {
+            git commit -m "Auto-refresh session cookies [skip ci]"
+            git push
+            echo "✅ Session cookies refreshed and pushed to repository"
+          } 

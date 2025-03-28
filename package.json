@@ -11,7 +11,9 @@
     "test": "jest",
     "lint": "eslint . --ext .ts,.tsx",
     "package": "node scripts/package.js",
-    "zip": "node scripts/zip-extension.js"
+    "zip": "node scripts/zip-extension.js",
+    "build:firefox": "node scripts/build-firefox.js",
+    "package:firefox": "npm run build:firefox && web-ext build --source-dir ./extension/dist-firefox --artifacts-dir ./extension --filename fichatgpt-firefox.xpi"
   },
   "keywords": [
     "cookies",
